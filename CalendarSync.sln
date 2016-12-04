@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "CoreSync", "CoreSync/CoreSync.xproj", "{0B6BC048-E7DB-4CA0-9560-81093761E0B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionStuff", "SolutionStuff", "{F02A9460-3462-435C-AB71-206FEAD34F19}"
+ProjectSection(SolutionItems) = preProject
+	.gitignore = .gitignore
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B6BC048-E7DB-4CA0-9560-81093761E0B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B6BC048-E7DB-4CA0-9560-81093761E0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B6BC048-E7DB-4CA0-9560-81093761E0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B6BC048-E7DB-4CA0-9560-81093761E0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
