@@ -10,13 +10,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CoreSync.Controllers
 {
-    public class CalendarSettings
+    public class GoogleCalendarSettings
     {
         public string CalendarId { get; set; }
 
         public string ServiceAccountEmail { get; set; }
 
-        public string GooglePrivateKey { get; set; }
+        public string PrivateKey { get; set; }
 
         public string ApplicationName { get; set; }
     }
@@ -24,16 +24,16 @@ namespace CoreSync.Controllers
     [Route("api/[controller]")]
     public class CalendarController : Controller
     {
-        private readonly CalendarSettings _settings;
+        private readonly GoogleCalendarSettings _settings;
 
         public CalendarController()
         {
-            _settings = new CalendarSettings
+            _settings = new GoogleCalendarSettings
             {
-                ApplicationName = Environment.GetEnvironmentVariable("ApplicationName"),
-                CalendarId = Environment.GetEnvironmentVariable("CalendarId"),
-                GooglePrivateKey = Environment.GetEnvironmentVariable("GooglePrivateKey"),
-                ServiceAccountEmail = Environment.GetEnvironmentVariable("ServiceAccountEmail"),
+                ApplicationName = Environment.GetEnvironmentVariable("GoogleApplicationName"),
+                CalendarId = Environment.GetEnvironmentVariable("GoogleCalendarId"),
+                PrivateKey = Environment.GetEnvironmentVariable("GooglePrivateKey"),
+                ServiceAccountEmail = Environment.GetEnvironmentVariable("GoogleServiceAccountMail"),
             };
         }
 
@@ -56,7 +56,7 @@ namespace CoreSync.Controllers
                     new ServiceAccountCredential.Initializer(_settings.ServiceAccountEmail)
                     {
                         Scopes = new[] {CalendarService.Scope.Calendar}
-                    }.FromPrivateKey(_settings.GooglePrivateKey));
+                    }.FromPrivateKey(_settings.PrivateKey));
 
                 // Create the service.
                 var service = new CalendarService(new BaseClientService.Initializer()
