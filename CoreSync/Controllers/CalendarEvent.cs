@@ -39,7 +39,7 @@ namespace CoreSync.Controllers
                 Start = new DateTime(
                     int.Parse(input[0].Substring(0, 4)),
                     int.Parse(input[0].Substring(5, 2)),
-                    int.Parse(input[0].Substring(8, 2))
+                    int.Parse(input[0].Substring(8, 2)) //, 0, 0, 0, 0, DateTimeKind.Utc
                 );
 
                 // If All-Day-Event -> New start/end
@@ -48,7 +48,7 @@ namespace CoreSync.Controllers
                     End = new DateTime(
                         int.Parse(input[0].Substring(13, 4)),
                         int.Parse(input[0].Substring(18, 2)),
-                        int.Parse(input[0].Substring(21, 2))
+                        int.Parse(input[0].Substring(21, 2)) //, 0, 0, 0, 0, DateTimeKind.Utc
                     );
 
                     Start = Start.AddHours(7);
@@ -58,7 +58,7 @@ namespace CoreSync.Controllers
                 {
                     End = Start;
                     Start = Start.AddHours(int.Parse(input[0].Substring(14, 2)));
-                    Start = Start.AddMinutes(int.Parse(input[0].Substring(18, 2)));
+                    Start = Start.AddMinutes(int.Parse(input[0].Substring(17, 2)));
 
                     End = End.AddHours(int.Parse(input[0].Substring(22, 2)));
                     End = End.AddMinutes(int.Parse(input[0].Substring(25, 2)));
